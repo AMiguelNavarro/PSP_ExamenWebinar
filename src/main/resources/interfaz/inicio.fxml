@@ -18,8 +18,8 @@
             <TextField fx:id="tfValorFinal" layoutX="136.0" layoutY="67.0" prefHeight="25.0" prefWidth="86.0" />
             <Label alignment="CENTER" layoutX="135.0" layoutY="44.0" prefHeight="17.0" prefWidth="86.0" text="Valor final" />
             <Button fx:id="btIniciar" layoutX="25.0" layoutY="114.0" mnemonicParsing="false" onAction="#iniciar" text="Iniciar" />
-            <Button fx:id="btParar" layoutX="86.0" layoutY="114.0" mnemonicParsing="false" onAction="#parar" text="Parar" />
-            <Button fx:id="btCancelar" layoutX="162.0" layoutY="114.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+            <Button fx:id="btParar" layoutX="84.0" layoutY="114.0" mnemonicParsing="false" onAction="#parar" prefHeight="25.0" prefWidth="78.0" text="Parar" />
+            <Button fx:id="btCancelar" layoutX="175.0" layoutY="114.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
             <ProgressBar fx:id="pbProgreso" layoutX="25.0" layoutY="164.0" prefWidth="200.0" progress="0.0" />
             <Label fx:id="lbProgreso" alignment="TOP_LEFT" layoutX="25.0" layoutY="193.0" prefHeight="55.0" prefWidth="200.0" />
             <CheckBox fx:id="cbCuentaAtras" layoutX="32.0" layoutY="14.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="186.0" text="Activar cuenta atrás" />
