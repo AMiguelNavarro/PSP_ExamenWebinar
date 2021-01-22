@@ -39,24 +39,31 @@ public class AppControlador implements Initializable {
 
         boolean iniciarCuentaAtras = cbCuentaAtras.isSelected();
 
-        if (iniciarCuentaAtras) {
-
-        }
-
         int valorInicial, valorFinal;
 
         valorInicial = Integer.parseInt(tfValorInicial.getText());
         valorFinal = Integer.parseInt(tfValorFinal.getText());
 
-        if (valorFinal <= valorInicial && !iniciarCuentaAtras) {
-            Alertas.mostrarError("El valor inicial no puede ser mayor que el valor final");
-            modoError();
-            return;
+        if (iniciarCuentaAtras) {
+
+            if (valorFinal >= valorInicial) {
+                Alertas.mostrarError("El valor inicial no puede ser menor que el valor final");
+                return;
+            }
+
+        } else {
+
+            if (valorFinal <= valorInicial && !iniciarCuentaAtras) {
+                Alertas.mostrarError("El valor inicial no puede ser mayor que el valor final");
+                modoError();
+                return;
+            }
+
         }
 
         modoEjecucion(true);
 
-        task = new AppTask(valorInicial, valorFinal);
+        task = new AppTask(valorInicial, valorFinal, iniciarCuentaAtras);
 
         task.stateProperty().addListener((observableValue, viejoEstado, nuevoEstado) -> {
 
@@ -85,6 +92,9 @@ public class AppControlador implements Initializable {
         });
 
         new Thread(task).start();
+
+
+
 
 
     }
